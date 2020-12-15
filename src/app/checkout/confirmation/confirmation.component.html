@@ -1,0 +1,42 @@
+
+<div class="container thank-you-comment">
+  <h1>Thank you for your order</h1>
+  <p>Hi {{ buyerParams.first  }}, we received order # <a href="#">{{ orderNumber }}</a> and are working on it now.</p> 
+  <p>We'll email you an update as soon as your order is processed</p>
+  <button class="btn">View Your Order</button>
+</div>
+<hr>
+<div class="container">
+  <h2 class="heading">Order Summary</h2>
+  <hr>
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <p><b>Shipping Method:</b> Express free shipping</p>
+      <p><b>Est Arrival: </b> {{shipDate | date:'longDate'}}</p>
+      <p><b>VISA: </b>{{buyerInfo[0].cardNumber | censored}}</p>
+    </div>
+    <div class="col-md-6 col-lg-6 col-12" >
+      <p><b>Shipping Address</b></p>
+      <p>{{buyerInfo[0].firstName | firstUppercase }} {{buyerInfo[0].lastName | firstUppercase}}</p>
+      <p *ngIf="buyerInfo[0].apt == null || '' ; else withZip">{{ buyerInfo[0].address | uppercase}} </p>
+      <ng-template #withZip>
+        <p>{{ buyerInfo[0].address | uppercase}} #{{buyerInfo[0].apt}}</p>
+      </ng-template>
+      <p>{{buyerInfo[0].city | uppercase}}, {{buyerInfo[0].state| uppercase}}  {{buyerInfo[0].zipCode}}</p>
+      <p>{{buyerParams.email | lowercase}}</p>
+    </div>
+    <div class="col-12">
+      <hr id="end-of-shipping">
+    </div>
+      <div class="col-md-4 col-lg-4 col-sm-12">
+        <img  class="side-image" src="../../../assets/confirmation-2.jpg" alt="Cup of coffee">
+      </div>
+      <div class="col-md-8 col-lg-md col-sm-12">
+        <h2 class="heading">Items Purchased</h2>
+        <hr>
+        <app-shopping-cart></app-shopping-cart>
+        <hr>
+      </div>
+      <hr>
+  </div>
+</div>

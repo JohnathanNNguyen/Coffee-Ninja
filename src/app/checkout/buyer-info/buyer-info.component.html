@@ -1,0 +1,67 @@
+<div class="row">
+  <div class="col-xs-12 col-md-12">
+    <h2 class="info-header">Your Info</h2>
+    <p>Already one of us? <a href="3"> Login</a></p>
+    <form class="form-container" [formGroup]="buyerInfo">
+      <mat-form-field class="col-md-6" color="primary" appearance="legacy">
+        <mat-label>First Name</mat-label>
+        <input matInput placeholder="John" formControlName="firstName">
+      </mat-form-field>
+      <mat-form-field class="col-md-6" color="primary" appearance="legacy">
+        <mat-label color="primary">Last Name</mat-label>
+        <input matInput placeholder="Doe" formControlName="lastName">
+      </mat-form-field>
+      <mat-form-field class="col-md-12 col-sm-12" color="primary" appearance="legacy">
+        <mat-label color="primary">Email</mat-label>
+        <input matInput placeholder="you@email.com" formControlName="email">
+      </mat-form-field>
+      <mat-form-field class="col-md-9 col-sm-9" color="primary" appearance="legacy">
+        <mat-label color="primary">Address</mat-label>
+        <input matInput placeholder="123 Coffee St" formControlName="address">
+      </mat-form-field>
+      <mat-form-field class="col-md-3 col-sm-3" color="primary" appearance="legacy">
+        <mat-label color="primary">Apt Suite</mat-label>
+        <input matInput placeholder="333" formControlName="apt">
+      </mat-form-field>
+      <mat-form-field class="col-md-5 col-sm-8" color="primary" appearance="legacy">
+        <mat-label color="primary">City</mat-label>
+        <input matInput placeholder="Denver" formControlName="city">
+      </mat-form-field>
+      <mat-form-field class="col-md-2 col-sm-4" color="primary" appearance="legacy">
+        <mat-label color="primary">State</mat-label>
+        <input matInput placeholder="CO" formControlName="state">
+      </mat-form-field>
+      <mat-form-field class="col-md-5 col-sm-12" color="primary" appearance="legacy">
+        <mat-label color="primary">Zip</mat-label>
+        <input matInput placeholder="80016" formControlName="zipCode" type="number">
+      </mat-form-field>
+      <hr>
+      <h2 class="col-md-12 col-sm-12">Payment Information</h2>
+      <mat-form-field class="col-md-6 col-sm-12" color="primary" appearance="legacy">
+        <mat-label color="primary">Card Number</mat-label>
+        <input matInput placeholder="xxxx xxxx xxxx xxxx" formControlName="cardNumber" >
+      </mat-form-field>
+      <mat-form-field class="col-md-3 col-sm-6" color="primary" appearance="legacy">
+        <mat-label color="primary">Exp</mat-label>
+        <input matInput placeholder="MM/YY" formControlName="expiration" >
+      </mat-form-field>
+      <mat-form-field class="col-md-3 col-sm-6" color="primary" appearance="legacy">
+        <mat-label color="primary">CVV</mat-label>
+        <input matInput placeholder="xxx" formControlName="cvv" >
+      </mat-form-field>
+      <div class="col-sm-12 col-md-12 accepted-cards">
+        <img  class="card-icons" src="../../../../assets/visa-svgrepo-com.svg" alt="Visa Card">
+        <img  class="card-icons" src="../../../../assets/mastercard-svgrepo-com.svg" alt="Master Card">
+        <img  class="card-icons" src="../../../../assets/discover-svgrepo-com.svg" alt="discover Card">
+        <img  class="card-icons" src="../../../../assets/american-express-logo-svgrepo-com.svg" alt="American Express Card">
+      </div>
+      <mat-checkbox class="save-checkbox" color="primary" formControlName="saveCardInfo">Save card information for future purchases</mat-checkbox>
+      <button 
+      type="button"
+      (click)="onSubmitOrder(buyerInfo.value)"
+      class="submit-button btn"
+      [disabled]="!buyerInfo.valid"
+      >Submit Order</button>
+    </form>
+  </div>
+</div> 

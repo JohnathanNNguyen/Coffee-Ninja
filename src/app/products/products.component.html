@@ -1,0 +1,108 @@
+<router-outlet></router-outlet>
+<div class="container">
+  <h2>Products</h2>
+  <hr>
+  <div class="row">
+    <div
+      class="col-md-6 col-lg-4 col-xs-12 "
+      *ngFor="let product of products; let i = index">
+      <div class="product-container">
+          <img 
+            class="product-img"
+            src="{{product.imagePath}}" 
+            alt="{{product.name}}">
+            <h3>{{product.name}}</h3>
+            <p>{{ product.desc }}</p>
+            <p>{{ product.size }} | {{ product.price }}
+                <a style="cursor:pointer"
+                    (click)="onShoppingCart(product)">
+                    <img 
+                    class="shopping-cart-icon"
+                    src="../../assets/shopping-cart.svg" 
+                    alt="shopping-cart">
+                </a>
+            </p>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+  <div class="row product-showcase">
+       <div class="col-xs-12 col-md-4 col-sm-6 product-container ">  
+          <a class="coffee-link d-flex justify-content-center " href="">
+              <img class="products " src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftheexoticbean.com%2Fwp-content%2Fuploads%2F2016%2F06%2Fshutterstock_289454174.jpg&f=1&nofb=1" alt="Glass of ice cold coffee">
+          </a>    
+          <a class="coffee-link d-flex justify-content-center" href="#">
+          <h4 >Cold brew </h4>
+          </a>
+          <p class="d-flex justify-content-center"><i>Sweet, chicory-laden perfection in a glass</i></p>
+          <p class="d-flex justify-content-center">16oz | $10</p>
+      
+      </div>
+      <div class="col-xs-12 col-md-4 col-sm-6 product-container">
+          <a  class="coffee-link d-flex justify-content-center" href="">
+              <img  class="products d-flex justify-content-center" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fscitechdaily.com%2Fimages%2Fperfect-shot-of-espresso-777x560.jpg&f=1&nofb=1" alt="cup of espresso">
+          </a>     
+          <a class="coffee-link d-flex justify-content-center" href="#">  
+              <h4>Colombian Blend</h4>
+          </a>
+
+          <p class="d-flex justify-content-center"><i>Butterscotch, Lemongrass, Green Apple</i></p>
+          <p class="d-flex justify-content-center">12oz | $15</p>
+      </div>
+      <div class="col-xs-12 col-md-4  col-sm-6 product-container">
+          <a  class="coffee-link justify-content-center d-flex" href="">
+              <img class="products" src="" alt="coffee from a chemex" class="product-3">
+          </a>
+          <a  class="coffee-link d-flex justify-content-center" href="">  
+              <h4 class="d-flex justify-content-center">Hayes Valley</h4>
+          </a>
+              <p class="d-flex justify-content-center"><i>Baking chocolate, orange zest, brown sugar</i></p>
+              <p class="d-flex justify-content-center">12oz | $20</p>
+          
+      </div>
+      
+      <div class="col-xs-12 col-md-4 col-sm-6 product-container ">  
+          <a class="coffee-link d-flex justify-content-center " href="">
+              <img class="products" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTN0wuGnNXL6fvYwJ7oNx0ef_VGsO2hiiOQ7A&usqp=CAU" alt="espresso from a portafilter">
+          </a>    
+          <a class="coffee-link d-flex justify-content-center" href="#">
+          <h4 >15ft Ceiling Espresso </h4>
+          </a>
+          <p class="d-flex justify-content-center"><i>Caramel, almond, dried cherry</i></p>
+          <p class="d-flex justify-content-center">16oz | $10</p>
+      
+      </div>
+      <div class="col-xs-12 col-md-4 col-sm-6 product-container">
+          <a  class="coffee-link d-flex justify-content-center" href="">
+              <img  class="products" src="https://i.dailymail.co.uk/1s/2018/10/20/19/5235722-0-image-m-26_1540060131566.jpg" alt="latte with latte art">
+          </a>     
+          <a class="coffee-link d-flex justify-content-center" href="#">  
+              <h4>Rwanda Nyanza</h4>
+          </a>
+
+          <p class="d-flex justify-content-center"><i>Candied mango, lemongrass, praline</i></p>
+          <p class="d-flex justify-content-center">12oz | $20</p>
+      </div>
+      <div class="col-xs-12 col-md-4  col-sm-6 product-container">
+          <a  class="coffee-link justify-content-center d-flex" href="">
+              <img class="products" src="https://foodal.com/wp-content/uploads/2015/02/DIY-Coffee-Roasting-Introduction.jpg" alt="roasted coffee" class="product-3">
+          </a>
+          <a  class="coffee-link d-flex justify-content-center" href="">  
+              <h4 class="d-flex justify-content-center">Robust Decaf</h4>
+          </a>
+              <p class="d-flex justify-content-center"><i>Crème brûlée, vanilla, key lime</i></p>
+              <p class="d-flex justify-content-center">16oz | $8</p>
+          
+      </div>
+  </div>  
+</div>   -->

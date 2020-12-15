@@ -1,0 +1,18 @@
+<div class="subscription-head d-flex flex-column align-items-center">
+  <h3 class="email-sub">Get updates to from Coffee Ninja</h3>
+  <p>Sign up for deals, coffee deals, and new items</p>
+  
+  <form class="form-container row" [formGroup]="subscription">
+    <input 
+    formControlName="email"
+    class="email-input email-sub col-md-12" 
+    type="text"
+    placeholder="you@yourname.com">
+    <button 
+    class="btn email-sub btn-color" 
+    [disabled]="!subscription.valid"
+    type="submit"
+    (click)="onSignUp()"
+    >SIGN UP</button>
+  </form>
+</div>

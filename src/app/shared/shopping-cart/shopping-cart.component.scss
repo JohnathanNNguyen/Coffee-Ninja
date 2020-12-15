@@ -1,0 +1,25 @@
+.all-items {
+  display: block;
+}
+.desc-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.item-price {
+  display: flex;
+  justify-content: flex-end;
+}
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-container {
+  margin-bottom: 20px;
+}
+.total {
+  display: inline-flex;
+  justify-content: flex-end;
+  padding-right: 70px;
+}

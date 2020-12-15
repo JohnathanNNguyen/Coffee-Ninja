@@ -1,0 +1,42 @@
+@import "../../../const.scss";
+
+.container-fluid {
+  margin: 0px;
+  padding: 0;
+}
+h1 {
+  font-size: 60px;
+}
+a {
+  color: $ninja-blue;
+}
+button {
+  background-color: $ninja-blue;
+  color: #fff;
+}
+.thank-you-comment {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+p {
+  margin: 0;
+}
+#end-of-shipping {
+  margin-bottom: 80px;
+  margin-top: 30px;
+}
+.side-image {
+  width: 100%;
+}
+.heading {
+  background-color: #d6e0f0;
+  padding: 15px;
+}
+
+// .thank-you-img {
+//   width: 100%;
+//   max-width: 1792px;
+//   max-height: 900px;
+// }

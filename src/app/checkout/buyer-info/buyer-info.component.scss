@@ -1,0 +1,36 @@
+@import "../../../const.scss";
+h2 {
+  color: rgba(0, 0, 0, 0.776);
+}
+hr {
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+p {
+  padding: 15px;
+}
+a {
+  color: $ninja-blue;
+}
+.info-header {
+  padding: 15px;
+}
+.save-checkbox {
+  margin: 15px;
+}
+.card-icons {
+  width: 30px;
+  margin-right: 10px;
+}
+.submit-button {
+  background-color: $ninja-blue;
+  color: #fff;
+  font-size: 15px;
+}
+button:disabled {
+  cursor: not-allowed;
+  background-color: #01a2dd98;
+}
+mat-form-field {
+  margin-bottom: 7px;
+}

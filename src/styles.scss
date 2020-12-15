@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./const.scss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+body,
+html {
+  background-color: #fff;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
+}
+a:hover {
+  color: #01a1dd;
+}
+::selection {
+  //Works only for the chrome browsers
+  background-color: $ninja-blue;
+  color: #fff;
+}
+
+::-moz-selection {
+  //Works for the firefox based browsers
+  background-color: $ninja-blue;
+  color: #fff;
+}

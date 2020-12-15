@@ -1,0 +1,76 @@
+<div class="container-fluid head"> 
+  <div>
+      <div class="row">
+      <header class="main-header d-flex flex-direction-column">
+          <div class="col head-navbar d-flex justify-content-start">
+          <!--header navbar-->
+            <nav class="navbar navbar-expand-lg  navbar-light">
+              <button class="navbar-toggler" type="button" 
+                (click)="toggleNavbar()">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse"
+                [ngClass]="{ 'show': navbarOpen }">
+                  <div class="navbar-nav mr-auto">
+                      <a
+                      class="nav-item"
+                      routerLink="/">Home</a>
+                      <a
+                      class="nav-item"
+                      routerLink="/product">Products</a>
+                      <a 
+                      class="nav-item"
+                      routerLink="about">About Us</a>
+                  </div>
+              </div>
+            </nav>
+          </div>
+           <!--Ninja Icon-->
+          <div class="col brand-logo d-flex justify-content-center">
+             <img class="brand-icon" src="../../assets/ninja-portrait-svgrepo-com.svg" alt="Ninja Coffee Icon">
+          </div>
+           <!--Checkout cart-->
+          
+            <div class="col checkout-cart d-flex justify-content-end">
+                <a
+                    *ngIf="itemsInCart > 0; else elseBlock" 
+                    matBadge="{{itemsInCart}}" 
+                    matBadgeColor="primary" 
+                    mayBadgePosition="below|after" 
+                    class="cart-header cart-badge" 
+                    >
+                    <img 
+                        (click)="openModalWithComponent()"
+                        class="checkout-cart" 
+                        src="../../assets/shopping-cart.svg"     
+                        alt="shopping cart">
+                </a>
+                <ng-template #elseBlock>
+                    <a 
+                        class="cart-header">
+                        <img 
+                        (click)="openModal(template)"
+                        class="checkout-cart" 
+                        src="../../assets/shopping-cart.svg"     alt="shopping cart">
+                    </a>
+                </ng-template>
+                <ng-template #template>
+                    <div class="modal-header">
+                      <h4 class="modal-title pull-left">Cart Is Empty</h4>
+                      <button 
+                        type="button" 
+                        class="close pull-right" 
+                        aria-label="Close" 
+                        (click)="modalRef.hide()">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      Check out some of our 
+                      <a class="coffee-link" routerLink="/product">Coffee</a>
+                    </div>
+                  </ng-template>
+            </div>
+         </header> 
+      </div>   
+  </div>    
