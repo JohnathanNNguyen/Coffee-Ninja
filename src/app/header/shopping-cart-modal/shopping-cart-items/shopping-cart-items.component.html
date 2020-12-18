@@ -1,24 +1,13 @@
-
-
-<!-- <h2 class="head">Your Cart</h2> -->
 <div class="row item-container container"     
 *ngFor="let items of myShoppingCart; let i = index">
   <div class="col-9 col-md-10 col-sm-10">
     <h5>{{items.name}}</h5>
     <p>{{items.desc}}</p>
-    <ng-content></ng-content>
+      <p id="remove-item" (click)="onRemoveItem(items, i)">Remove Item</p>
+      <hr>
   </div>
   <div class="col-3 col-md-2 col-sm-2 ">
     <h5>${{items.price}}</h5>
-  </div>
-</div>
-<hr>
-<div class="row container">
-  <div class="col-9 col-md-10 col-sm 10 col-xs-10">
-    <h6>Shipping</h6>
-  </div>
-  <div class="col-3 col-md-2 col-sm-2 col-xs-2">
-    <h6>Free</h6>
   </div>
 </div>
 <hr>
@@ -30,5 +19,3 @@
     <h4 class="total-price">${{totalPrice}}</h4>
   </div>
 </div>
-
-

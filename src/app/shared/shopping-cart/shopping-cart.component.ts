@@ -11,10 +11,8 @@ import { ShoppingCartService } from 'src/app/shared/shopping-cart.service';
 export class ShoppingCartComponent implements OnInit {
   myShoppingCart: Product[] = []
   totalPrice: number = 0;
-  salesTax: number = 0;
   constructor(
     private shoppingCart: ShoppingCartService) {
-    // this.salesTax = this.shoppingCart.salesTax *= this.shoppingCart.cartTotal
   }
 
   ngOnInit(): void {

@@ -28,6 +28,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { CommonModule } from '@angular/common';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ShoppingCartItemsComponent } from './header/shopping-cart-modal/shopping-cart-items/shopping-cart-items.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     UppercasePipe,
     CensoredPipe,
     PageNotFoundComponent,
+    ShoppingCartItemsComponent,
   ],
   imports: [
     BrowserModule,

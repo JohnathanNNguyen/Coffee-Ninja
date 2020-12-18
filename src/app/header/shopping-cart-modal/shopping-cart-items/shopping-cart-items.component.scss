@@ -1,0 +1,14 @@
+@import "../../../../const.scss";
+
+p {
+  padding: 0;
+  margin: 0;
+}
+#remove-item {
+  color: $ninja-blue;
+  cursor: pointer;
+  &:hover {
+    color: rgb(113, 195, 230);
+    text-decoration: underline;
+  }
+}

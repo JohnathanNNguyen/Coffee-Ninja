@@ -1,3 +1,10 @@
+@import "../../const.scss";
+// li:active {
+//   color: $ninja-blue;
+// }
+// a:active {
+//   color: $ninja-blue;
+// }
 .main-header {
   background-color: #f1f3f8;
   border-bottom: 2px solid rgba(223, 223, 223, 0.568);
@@ -15,10 +22,12 @@
 }
 .nav-item {
   margin-right: 20px;
-  color: #000000;
 }
 a:hover {
   color: #01a2ddd6;
+}
+a {
+  color: black;
 }
 .checkout-cart {
   width: 30px;
@@ -31,5 +40,5 @@ a:hover {
   margin-right: 20px;
 }
 .coffee-link {
-  color: #08aeeb;
+  color: $ninja-blue;
 }

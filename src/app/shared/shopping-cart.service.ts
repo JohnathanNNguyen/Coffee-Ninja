@@ -15,13 +15,13 @@ export class ShoppingCartService {
 
   onAddToCart(item: Product) {
     this.shoppingCart.push(item)
-    this.updateCart.emit(this.shoppingCart)
+    this.updateCart.emit(this.shoppingCart.slice())
     this.cartTotal += item.price
   }
   onRemoveItem(item: Product, i: number) {
+    this.cartTotal -= item.price
     this.shoppingCart.splice(i, 1)
     this.updateCart.emit(this.shoppingCart)
-    this.cartTotal -= item.price
   }
 }
 

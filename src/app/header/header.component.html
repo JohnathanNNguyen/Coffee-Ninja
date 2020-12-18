@@ -1,5 +1,5 @@
 <div class="container-fluid head"> 
-  <div>
+  <!-- <div> -->
       <div class="row">
       <header class="main-header d-flex flex-direction-column">
           <div class="col head-navbar d-flex justify-content-start">
@@ -11,17 +11,24 @@
               </button>
               <div class="collapse navbar-collapse"
                 [ngClass]="{ 'show': navbarOpen }">
-                  <div class="navbar-nav mr-auto">
+                  <ul class="navbar-nav nav">
+                    <li routerLinkActive="active">
                       <a
-                      class="nav-item"
-                      routerLink="/">Home</a>
+                        class="nav-item"
+                        routerLink="/">Home</a>
+                    </li>  
+                    <li routerLinkActive="active"> 
                       <a
                       class="nav-item"
                       routerLink="/product">Products</a>
+                    </li>
+                    <li >
                       <a 
+                      class="active"
                       class="nav-item"
                       routerLink="about">About Us</a>
-                  </div>
+                    </li>
+                  </ul>
               </div>
             </nav>
           </div>
