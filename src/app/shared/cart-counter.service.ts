@@ -16,4 +16,8 @@ export class CartCounterService {
     this.numberOfItemsInCart--;
     this.cartChanged.emit(this.numberOfItemsInCart)
   }
+  resetCart() {
+    this.numberOfItemsInCart = 0
+    this.cartChanged.emit(this.numberOfItemsInCart)
+  }
 }

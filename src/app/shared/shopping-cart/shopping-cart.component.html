@@ -1,12 +1,10 @@
 
-
-<!-- <h2 class="head">Your Cart</h2> -->
 <div class="row item-container container"     
 *ngFor="let items of myShoppingCart; let i = index">
   <div class="col-9 col-md-10 col-sm-10">
     <h5>{{items.name}}</h5>
     <p>{{items.desc}}</p>
-    <ng-content></ng-content>
+   <hr>
   </div>
   <div class="col-3 col-md-2 col-sm-2 ">
     <h5>${{items.price}}</h5>

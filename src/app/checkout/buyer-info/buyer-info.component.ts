@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
+import { CartCounterService } from 'src/app/shared/cart-counter.service';
 import { BuyerInfoService } from '../buyer-info.service';
 
 @Component({
@@ -17,6 +18,7 @@ export class BuyerInfoComponent implements OnInit {
     private readonly fb: FormBuilder,
     private router: Router,
     private buyerInfoService: BuyerInfoService,
+    private cartCounter: CartCounterService
   ) {
     this.buyerInfo = this.fb.group({
       firstName: new FormControl(null, [Validators.required]),
@@ -48,6 +50,7 @@ export class BuyerInfoComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmitOrder(value: FormGroup): void {
+    this.cartCounter.resetCart()
     this.buyerInfoService.allBuyerInfo.push(value)
     let navigationExtras: NavigationExtras = {
       queryParams: {
