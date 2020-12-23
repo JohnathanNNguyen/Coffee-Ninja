@@ -18,17 +18,17 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ConfirmationComponent } from './checkout/confirmation/confirmation.component';
 import { UppercasePipe } from './pipes/uppercase.pipe';
 import { CensoredPipe } from './pipes/censored.pipe';
+import { CommonModule } from '@angular/common';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ShoppingCartItemsComponent } from './header/shopping-cart-modal/shopping-cart-items/shopping-cart-items.component';
 
-
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { CommonModule } from '@angular/common';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ShoppingCartItemsComponent } from './header/shopping-cart-modal/shopping-cart-items/shopping-cart-items.component';
 
 
 @NgModule({
@@ -64,7 +64,8 @@ import { ShoppingCartItemsComponent } from './header/shopping-cart-modal/shoppin
     MatButtonModule,
     MatCheckboxModule,
 
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    CarouselModule
 
   ],
   providers: [],

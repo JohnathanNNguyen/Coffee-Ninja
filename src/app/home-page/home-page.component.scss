@@ -1,3 +1,9 @@
+@import "../../const.scss";
+button {
+  background-color: $ninja-blue;
+  color: #fff;
+  margin-top: 30px;
+}
 .coffee-head {
   width: 100vw;
 }
@@ -27,4 +33,27 @@
 .hr-spacing {
   margin-top: 70px;
   margin-bottom: 70px;
+}
+.product-carousel {
+  max-width: 800px;
+  max-height: 529px;
+  height: auto;
+  width: 100%;
+}
+.collection {
+  margin: 50px;
+}
+.winter-items-container {
+  align-content: center;
+  display: flex;
+  flex-flow: wrap;
+}
+.winter-items-center {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+#winter-items-start {
+  display: flex;
+  align-self: start;
 }
