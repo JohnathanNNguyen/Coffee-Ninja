@@ -1,4 +1,4 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Product } from '../products/product.model';
 
 @Injectable({
@@ -6,7 +6,6 @@ import { Product } from '../products/product.model';
 })
 
 export class ProductService {
-  addedToCart = new EventEmitter<Product[]>()
 
 
   products: Product[] = [
