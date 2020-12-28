@@ -13,6 +13,9 @@ export class BuyerInfoComponent implements OnInit {
   public readonly buyerInfo: FormGroup;
   public readonly billingInfo: FormGroup;
   submitForm: any;
+  sameBilling: boolean = true;
+  billingForm: boolean = true;
+  billingInfoConfirmed: boolean = false;
 
   constructor(
     private readonly fb: FormBuilder,
@@ -37,14 +40,15 @@ export class BuyerInfoComponent implements OnInit {
     this.billingInfo = this.fb.group({
       firstName: new FormControl(null, [Validators.required]),
       lastName: new FormControl(null, [Validators.required]),
-      email: new FormControl(null, [Validators.required]),
       address: new FormControl(null, [Validators.required]),
-      apt: new FormControl(null, [Validators.required]),
+      apt: new FormControl(null),
       city: new FormControl(null, [Validators.required]),
       state: new FormControl(null, [Validators.required]),
-      zipCode: new FormControl(null, [Validators.required]),
-      Country: new FormControl(null, [Validators.required])
+      zipCode: new FormControl(null, [Validators.required])
     })
+    // if (this.billingInfo.valid || this.sameBilling === true) {
+    //   this.billingInfoConfirmed = true;
+    // }
   }
 
   ngOnInit(): void {
@@ -60,5 +64,19 @@ export class BuyerInfoComponent implements OnInit {
       }
     }
     this.router.navigate(['/confirmation'], navigationExtras)
+  }
+  changedBilling() {
+    this.sameBilling = !this.sameBilling
+    this.billingInfo.reset()
+    if (this.sameBilling === true) {
+      this.billingForm = true
+    } else {
+      this.billingForm = false
+    }
+  }
+  onKeyUp(value: boolean) {
+    if (value === true) {
+      this.billingForm = true
+    }
   }
 }

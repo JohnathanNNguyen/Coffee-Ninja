@@ -18,9 +18,9 @@
     <div class="col-md-6 col-lg-6 col-12" >
       <p><b>Shipping Address</b></p>
       <p>{{buyerInfo[0].firstName | firstUppercase }} {{buyerInfo[0].lastName | firstUppercase}}</p>
-      <p *ngIf="buyerInfo[0].apt == null || '' ; else withZip">{{ buyerInfo[0].address | uppercase}} </p>
-      <ng-template #withZip>
-        <p>{{ buyerInfo[0].address | uppercase}} #{{buyerInfo[0].apt}}</p>
+      <p *ngIf="buyerInfo[0].apt == null || '' ; else withApt">{{ buyerInfo[0].address | uppercase}} </p>
+      <ng-template #withApt>
+        <p>{{ buyerInfo[0].address | uppercase}} {{buyerInfo[0].apt}}</p>
       </ng-template>
       <p>{{buyerInfo[0].city | uppercase}}, {{buyerInfo[0].state| uppercase}}  {{buyerInfo[0].zipCode}}</p>
       <p>{{buyerParams.email | lowercase}}</p>
