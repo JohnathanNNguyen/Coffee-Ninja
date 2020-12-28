@@ -43,12 +43,9 @@ export class BuyerInfoComponent implements OnInit {
       address: new FormControl(null, [Validators.required]),
       apt: new FormControl(null),
       city: new FormControl(null, [Validators.required]),
-      state: new FormControl(null, [Validators.required]),
-      zipCode: new FormControl(null, [Validators.required])
+      state: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+      zipCode: new FormControl(null, [Validators.required, Validators.minLength(5)])
     })
-    // if (this.billingInfo.valid || this.sameBilling === true) {
-    //   this.billingInfoConfirmed = true;
-    // }
   }
 
   ngOnInit(): void {
