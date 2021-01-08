@@ -1,0 +1,46 @@
+<div mat-dialog-actions class=" close pull-right">
+  <button 
+      type="button" 
+      class="close pull-right" 
+      aria-label="Close" 
+      mat-dialog-close>
+    <span aria-hidden="true">&times;</span></button>
+</div>
+<h3 mat-dialog-title>Your Cart</h3>
+<hr>
+<mat-dialog-content>
+  <div class=" container"     
+  *ngFor="let items of myShoppingCart; let i = index">
+    <div class="row">
+      <div class="col-10 col-md-10 col-sm-10 col-xs-10">
+        <h5>{{items.name}}</h5>
+        <p>{{items.desc}}</p>
+          <p id="remove-item" (click)="onRemoveItem(items, i)">Remove Item</p>
+          <hr>
+      </div>
+      <div class="col-2 col-md-2 col-sm-2  col-xs-2">
+        <h5>${{items.price}}</h5>
+      </div>
+    </div>
+    </div>
+  <hr>
+  <div class="row container">
+    <div class="total col-9 col-md-10 ">
+      <h4>Total</h4>
+    </div>
+    <div class="col-3 col-md-2 col-lg-2">
+      <h4 class="total-price">${{totalPrice}}</h4>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions class="checkout-button">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 ">
+      <button 
+        class="btn"
+        routerLink="/checkout"
+        mat-dialog-close
+      >Checkout</button>
+    </div>
+  </div>
+</mat-dialog-actions>

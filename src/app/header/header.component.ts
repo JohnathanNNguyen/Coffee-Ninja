@@ -1,8 +1,8 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
-import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { CartCounterService } from '../shared/cart-counter.service';
-import { ShoppingCartModalComponent } from './shopping-cart-modal/shopping-cart-modal.component';
-
+import { ShoppingCartItemsComponent } from './shopping-cart-items/shopping-cart-items.component';
+import { EmptyCartComponent } from './empty-cart/empty-cart.component'
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -10,12 +10,10 @@ import { ShoppingCartModalComponent } from './shopping-cart-modal/shopping-cart-
 })
 export class HeaderComponent implements OnInit {
   itemsInCart: number = 0;
-  bsModalRef!: BsModalRef;
-  modalRef!: BsModalRef;
   navbarOpen = false
   constructor(
     private cartCounter: CartCounterService,
-    private modalService: BsModalService) {
+    public dialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -26,17 +24,14 @@ export class HeaderComponent implements OnInit {
       }
       )
   }
-  openModalWithComponent() {
-    this.bsModalRef = this.modalService.show(ShoppingCartModalComponent);
-    this.bsModalRef.content.closeBtnName = 'Close';
+  openDialog() {
+    this.dialog.open(ShoppingCartItemsComponent);
+
   }
-  openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
+  openEmptyDialog() {
+    this.dialog.open(EmptyCartComponent);
   }
-  onEmptyCart(template: TemplateRef<any>) {
-    this.bsModalRef = this.modalService.show(template);
-    this.bsModalRef.content.closeBtnName = 'Close';
-  }
+
   toggleNavbar() {
     this.navbarOpen = !this.navbarOpen
   }

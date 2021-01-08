@@ -1,6 +1,8 @@
 @import "../../../const.scss";
 h2 {
+  background-color: #d6e0f0;
   color: rgba(0, 0, 0, 0.776);
+  padding: 15px;
 }
 hr {
   margin-top: 30px;
@@ -13,7 +15,7 @@ a {
   color: $ninja-blue;
 }
 .info-header {
-  padding: 15px;
+  margin-right: 55px;
 }
 .save-checkbox {
   margin: 15px;
@@ -32,5 +34,9 @@ button:disabled {
   background-color: #01a2dd98;
 }
 mat-form-field {
-  margin-bottom: 7px;
+  margin-bottom: 15px;
+}
+.form-container {
+  // border-right: 1px solid rgba(120, 120, 120, 0.625);
+  padding-right: 40px;
 }

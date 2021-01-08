@@ -1,0 +1,18 @@
+<div mat-dialog-actions class=" close pull-right">
+  <button 
+      type="button" 
+      (click)="closeDialog()"
+      class="close pull-right" 
+      aria-label="Close" 
+      mat-dialog-close>
+    <span mat-dialog-close aria-hidden="true">&times;</span></button>
+</div>
+  <h4 mat-dialog-title>Cart Is Empty</h4>
+<hr>
+<div>
+  <p>
+    Check out some of our 
+    <a (click)="onCoffee()" class="coffee-link">Coffee</a>
+  </p>
+</div>
+

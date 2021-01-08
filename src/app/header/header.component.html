@@ -37,27 +37,27 @@
              <img class="brand-icon" src="../../assets/ninja-portrait-svgrepo-com.svg" alt="Ninja Coffee Icon">
           </div>
            <!--Checkout cart-->
-          
+
             <div class="col checkout-cart d-flex justify-content-end">
                 <a
-                    *ngIf="itemsInCart > 0; else elseBlock" 
-                    matBadge="{{itemsInCart}}" 
-                    matBadgeColor="primary" 
-                    mayBadgePosition="below|after" 
-                    class="cart-header cart-badge" 
-                    >
-                    <img 
-                        (click)="openModalWithComponent()"
-                        class="checkout-cart" 
-                        src="../../assets/shopping-cart.svg"     
-                        alt="shopping cart">
+                  *ngIf="itemsInCart > 0; else elseBlock" 
+                  matBadge="{{itemsInCart}}" 
+                  matBadgeColor="primary" 
+                  mayBadgePosition="below|after" 
+                  class="cart-header cart-badge clickable" 
+                  >
+                  <img 
+                      (click)="openDialog()"
+                      class="checkout-cart" 
+                      src="../../assets/shopping-cart.svg"     
+                      alt="shopping cart">
                 </a>
                 <ng-template #elseBlock>
                     <a 
                         class="cart-header">
                         <img 
-                        (click)="openModal(template)"
-                        class="checkout-cart" 
+                        (click)="openEmptyDialog()"
+                        class="checkout-cart clickable" 
                         src="../../assets/shopping-cart.svg"     alt="shopping cart">
                     </a>
                 </ng-template>
@@ -68,7 +68,7 @@
                         type="button" 
                         class="close pull-right" 
                         aria-label="Close" 
-                        (click)="modalRef.hide()">
+                        mat-dialog-close>
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>

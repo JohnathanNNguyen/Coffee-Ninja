@@ -1,0 +1,20 @@
+@import "../../../const.scss";
+.close {
+  outline: 0;
+  display: flex;
+  align-items: flex-start;
+  padding: 0;
+}
+.coffee-link {
+  color: $ninja-blue;
+  cursor: pointer;
+}
+
+a:not([href]):not([tabindex]):focus,
+a:not([href]):not([tabindex]):hover {
+  text-decoration: underline;
+}
+a:not([href]):not([tabindex]) {
+  color: $ninja-blue;
+  text-decoration: none;
+}
